@@ -75,4 +75,4 @@ Commons 3.0](http://creativecommons.org/licenses/by/3.0/).
 
 Copyright (c) 2022 Flávio Gonçalves Garcia
 
-Copyright (c) 2013-2014 Jorge Puente Sarrín
+Copyright (c) 2013-2022 Jorge Puente Sarrín

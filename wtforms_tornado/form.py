@@ -1,7 +1,7 @@
 # -*- coding: UTF-8 -*-
 #
 # Copyright 2022 Flávio Gonçalves Garcia
-# Copyright 2013-2014 Jorge Puente Sarrín
+# Copyright 2013-2022 Jorge Puente Sarrín
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.

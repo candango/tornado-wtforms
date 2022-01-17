@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-from . import TEST_ROOT
+from tests import TEST_ROOT
 import os
 from unittest import TestCase
 from wtforms.fields import Field, _unset_value

@@ -5,6 +5,13 @@
 
 WTForms extensions for Tornado forked from [WTForms-Tornado](https://github.com/puentesarrin/wtforms-tornado).
 
+We will derive the amazing work developed by the original project and add 
+further improvements.
+
+The project [WTForms-Tornado](https://github.com/puentesarrin/wtforms-tornado)
+will continue to be matained. Check the original project to see if it fit the
+needs your project/application needs.
+
 ## Usage
 
 ```python
@@ -12,13 +19,13 @@ import tornado.ioloop
 import tornado.web
 
 from wtforms.fields import IntegerField
-from wtforms.validators import Required
-from wtforms_tornado import Form
+from wtforms.validators import DataRequired
+from tornado_wtforms import TornadoForm
 
-class SumForm(Form):
+class SumForm(TornadoForm):
 
-   a = IntegerField(validators=[Required()])
-   b = IntegerField(validators=[Required()])
+   a = IntegerField(validators=[DataRequired()])
+   b = IntegerField(validators=[DataRequired()])
 
 class SumHandler(tornado.web.RequestHandler):
    def get(self):
@@ -69,6 +76,10 @@ $ sudo python setup.py install
 Tornado WTForms is a fork from [WTForms Tornado](https://pypi.org/project/wtforms-tornado/)
 and now is one of [Candango Open Source Group](http://www.candango.org/projects/)
 initiatives. It is available under [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0.html).
+
+[WTForms Tornado](https://pypi.org/project/wtforms-tornado/) is maintained by
+[Jorge Puente Sarrín](https://github.com/puentesarrin) and is available under
+[Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0.html).
 
 This web site and all documentation is licensed under [Creative
 Commons 3.0](http://creativecommons.org/licenses/by/3.0/).

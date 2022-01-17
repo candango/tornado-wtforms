@@ -1,9 +1,6 @@
 #!/usr/bin/env python
+from . import TEST_ROOT
 import os
-import sys
-my_dir = os.path.dirname(os.path.abspath(__file__))
-sys.path.insert(0, os.path.abspath(os.path.join(my_dir, '..')))
-
 from unittest import TestCase
 from wtforms.fields import Field, _unset_value
 try:
@@ -41,7 +38,8 @@ class TornadoWrapperTest(TestCase):
     def setUp(self):
         connection = _Connection(_Context())
         self.test_values = HTTPServerRequest(
-            'GET', 'http://localhost?a=Apple&b=Banana&a=Cherry', connection=connection
+            'GET', 'http://localhost?a=Apple&b=Banana&a=Cherry',
+            connection=connection
         )
         self.empty_mdict = TornadoInputWrapper({})
         self.filled_mdict = TornadoInputWrapper(self.test_values.arguments)
@@ -95,7 +93,7 @@ class DummyHandler(web.RequestHandler):
 class TornadoApplicationTest(testing.AsyncHTTPTestCase):
     def setUp(self):
         super(TornadoApplicationTest, self).setUp()
-        locale.load_translations('tests/translations')
+        locale.load_translations(os.path.join(TEST_ROOT, "translations"))
 
     def get_app(self):
         return web.Application([('/', DummyHandler)])
@@ -108,7 +106,8 @@ class TornadoApplicationTest(testing.AsyncHTTPTestCase):
     def test_wrong_form(self):
         response = self.fetch('/?fake=wtforms')
         self.assertEqual(response.code, 500)
-        self.assertEqual(response.body, b'{"search": ["Search field is required"]}')
+        self.assertEqual(response.body,
+                         b'{"search": ["Search field is required"]}')
 
     def test_translations_default(self):
         response = self.fetch('/?label=True&search=wtforms')

@@ -15,8 +15,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from .i18n import TornadoTranslations
-
+from .meta import TornadoMeta
 from tornado import escape
 from wtforms import form
 
@@ -58,24 +57,28 @@ class TornadoForm(form.Form):
     A Form derivative which uses the locale module from Tornado.
     """
 
-    def __init__(self, formdata=None, obj=None, prefix='', data=None,
-                 meta=None, **kwargs):
+    Meta = TornadoMeta
+
+    def __init__(self, formdata=None, obj=None, prefix="", data=None,
+                 meta=None, **kwargs,):
         self._locale_code = kwargs.get("locale_code", "en_US")
-        super(TornadoForm, self).__init__(formdata, obj, prefix, **kwargs)
+        super(TornadoForm, self).__init__(formdata=formdata, obj=obj,
+                                          prefix=prefix, data=data,
+                                          meta=meta, **kwargs)
+
+    @property
+    def current_locale(self):
+        return self._locale_code
 
     def process(self, formdata=None, obj=None, **kwargs):
         if formdata is not None and not hasattr(formdata, 'getlist'):
             formdata = TornadoInputWrapper(formdata)
         super(TornadoForm, self).process(formdata, obj, **kwargs)
 
-    def _get_translations(self):
-        if not hasattr(self, '_locale_code'):
-            self._locale_code = 'en_US'
-        return TornadoTranslations(self._locale_code)
-
 
 class Form(TornadoForm):
 
-    def __init__(self, formdata=None, obj=None, prefix='', data=None,
+    def __init__(self, formdata=None, obj=None, prefix="", data=None,
                  meta=None, **kwargs):
-        super(Form, self).__init__(formdata, obj, prefix, **kwargs)
+        super(Form, self).__init__(formdata=formdata, obj=obj, prefix=prefix,
+                                   data=data, meta=meta, **kwargs)

@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 #
 # Copyright 2022 Flávio Gonçalves Garcia
@@ -16,21 +15,20 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import unittest
-from tests import application_test, wraper_test
+from tornado import locale
 
 
-def suite():
-    test_loader = unittest.TestLoader()
-    alltests = unittest.TestSuite()
-    alltests.addTests(test_loader.loadTestsFromModule(application_test))
-    alltests.addTests(test_loader.loadTestsFromModule(wraper_test))
-    return alltests
+class TornadoTranslations(object):
+    """
+    A translations object for WTForms that gets its messages from Tornado's
+    locale module.
+    """
 
+    def __init__(self, code):
+        self.locale = locale.get(code)
 
-if __name__ == "__main__":
-    runner = unittest.TextTestRunner(verbosity=3)
-    result = runner.run(suite())
-    if not result.wasSuccessful():
-        exit(2)
+    def gettext(self, string):
+        return self.locale.translate(string)
 
+    def ngettext(self, singular, plural, n):
+        return self.locale.translate(singular, plural, n)

@@ -1,8 +1,7 @@
-#!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 #
 # Copyright 2022 Flávio Gonçalves Garcia
-# Copyright 2013-2022 Jorge Puente Sarrín
+# Copyright 2013-2014 Jorge Puente Sarrín
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -16,21 +15,22 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import unittest
-from tests import application_test, wraper_test
+__author__ = "Flávio Gonçalves Garcia <piraz@candango.org>"
+__version__ = (0, 0, 0, 1)
+__licence__ = "Apache License V2.0"
+
+from .form import TornadoForm, TornadoInputWrapper
 
 
-def suite():
-    test_loader = unittest.TestLoader()
-    alltests = unittest.TestSuite()
-    alltests.addTests(test_loader.loadTestsFromModule(application_test))
-    alltests.addTests(test_loader.loadTestsFromModule(wraper_test))
-    return alltests
+def get_version():
+    if isinstance(__version__[-1], str):
+        return '.'.join(map(str, __version__[:-1])) + __version__[-1]
+    return ".".join(map(str, __version__))
 
 
-if __name__ == "__main__":
-    runner = unittest.TextTestRunner(verbosity=3)
-    result = runner.run(suite())
-    if not result.wasSuccessful():
-        exit(2)
+def get_author():
+    return __author__.split(" <")[0]
 
+
+def get_author_email():
+    return __author__.split(" <")[1][:-1]

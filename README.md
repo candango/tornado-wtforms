@@ -2,6 +2,7 @@
 
 [![Latest PyPI version](https://img.shields.io/pypi/v/tornado-wtforms.svg)](https://pypi.org/project/tornado-wtforms/)
 [![Number of PyPI downloads](https://img.shields.io/pypi/dm/tornado-wtforms.svg)](https://pypi.org/project/tornado-wtforms/)
+[![Build Status](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Fcandango%2Ftornado-wtforms%2Fbadge&style=flat)](https://actions-badge.atrox.dev/candango/tornado-wtforms/goto)
 
 WTForms extensions for Tornado forked from [WTForms-Tornado](https://github.com/puentesarrin/wtforms-tornado).
 

@@ -15,6 +15,7 @@
 # limitations under the License.
 
 from importlib import reload
+import logging
 import os
 
 
@@ -59,3 +60,24 @@ def chdir_app(app_name, dir=None):
         test_app_dirname = os.path.join(test_dirname, 'resources', app_name)
     os.chdir(test_app_dirname)
     reload(firenado.conf)
+
+
+class TornadoAccessFilter(logging.Filter):
+    """Filter to supress the anoying error 500(and others) from tornado.
+    See: https://stackoverflow.com/a/21945048/2887989
+    """
+
+    def filter(self, record):
+        if record.name == 'tornado.access':
+            return False
+        return True
+
+
+class NoTornadoAccessLogger(logging.Logger):
+    def __init__(self, name):
+        logging.Logger.__init__(self, name)
+        self.addFilter(TornadoAccessFilter())
+
+
+# This will run after this module is imported
+logging.setLoggerClass(NoTornadoAccessLogger)

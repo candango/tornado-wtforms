@@ -75,5 +75,5 @@ setup(
         "Topic :: Software Development :: Libraries",
         "Topic :: Software Development :: Libraries :: Python Modules"
     ],
-    packages=["tornado_wtforms"],
+    packages=["tornado_wtforms", "wtforms_tornado"],
 )

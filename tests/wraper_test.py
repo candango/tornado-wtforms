@@ -61,7 +61,7 @@ class TornadoWrapperTest(unittest.TestCase):
         def _check(formdata):
             self.assertTrue(isinstance(formdata, TornadoInputWrapper))
 
-        form = Form({'a': SneakyField(_check)})
+        form = TornadoForm({'a': SneakyField(_check)})
         form.process(self.filled_mdict)
 
     def test_empty(self):

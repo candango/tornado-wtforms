@@ -24,7 +24,7 @@ except ImportError:
     from wtforms.fields import TextField as StringField
     from wtforms.validators import Required as DataRequired
 from tornado import locale, web, testing
-from tornado_wtforms import TornadoForm
+from tornado_wtforms.form import TornadoForm
 
 
 class SearchForm(TornadoForm):

@@ -15,15 +15,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from .meta import TornadoMeta
-from tornado import escape
-from wtforms import form
-import warnings
-
 __all__ = (
     'TornadoInputWrapper',
     'TornadoForm',
 )
+
+from .meta import TornadoMeta
+from tornado import escape
+from wtforms import form
+import warnings
 
 
 class TornadoInputWrapper(object):
@@ -82,8 +82,8 @@ class Form(TornadoForm):
     def __init__(self, formdata=None, obj=None, prefix="", data=None,
                  meta=None, **kwargs):
         warnings.warn(
-            "The tornado_wtforms.Form class is depreciated, please utilize "
-            "tornado_wtforms.TornadoForm.",
+            "The tornado_wtforms.form.Form class is depreciated, please use "
+            "tornado_wtforms.form.TornadoForm.",
             DeprecationWarning, stacklevel=3)
         super(Form, self).__init__(formdata=formdata, obj=obj, prefix=prefix,
                                    data=data, meta=meta, **kwargs)

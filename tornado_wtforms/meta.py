@@ -15,6 +15,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+__all__ = (
+    'TornadoMeta',
+)
+
 from wtforms.meta import DefaultMeta
 from .i18n import TornadoTranslations
 

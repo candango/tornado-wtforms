@@ -10,10 +10,12 @@ from wtforms.fields import IntegerField
 from wtforms.validators import DataRequired
 from wtforms_tornado import Form
 
+
 class SumForm(Form):
 
     a = IntegerField(validators=[DataRequired()])
     b = IntegerField(validators=[DataRequired()])
+
 
 class SumHandler(tornado.web.RequestHandler):
     def get(self):
@@ -26,6 +28,7 @@ class SumHandler(tornado.web.RequestHandler):
         else:
             self.set_status(400)
             self.write(form.errors)
+
 
 application = tornado.web.Application([
     (r"/", SumHandler),

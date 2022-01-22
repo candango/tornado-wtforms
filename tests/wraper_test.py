@@ -25,8 +25,7 @@ except ImportError:
     from wtforms.validators import Required as DataRequired
 from tornado.httputil import HTTPServerRequest
 
-from wtforms_tornado.form import TornadoInputWrapper
-from wtforms_tornado import Form
+from tornado_wtforms.form import TornadoInputWrapper, TornadoForm
 
 
 class SneakyField(Field):
@@ -61,7 +60,7 @@ class TornadoWrapperTest(unittest.TestCase):
         def _check(formdata):
             self.assertTrue(isinstance(formdata, TornadoInputWrapper))
 
-        form = Form({'a': SneakyField(_check)})
+        form = TornadoForm({'a': SneakyField(_check)})
         form.process(self.filled_mdict)
 
     def test_empty(self):

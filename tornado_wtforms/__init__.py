@@ -16,10 +16,8 @@
 # limitations under the License.
 
 __author__ = "Flávio Gonçalves Garcia <piraz@candango.org>"
-__version__ = (0, 0, 0, 1)
+__version__ = (0, 0, 1)
 __licence__ = "Apache License V2.0"
-
-from .form import TornadoForm, TornadoInputWrapper
 
 
 def get_version():

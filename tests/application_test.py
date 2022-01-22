@@ -24,10 +24,10 @@ except ImportError:
     from wtforms.fields import TextField as StringField
     from wtforms.validators import Required as DataRequired
 from tornado import locale, web, testing
-from wtforms_tornado import Form
+from tornado_wtforms import TornadoForm
 
 
-class SearchForm(Form):
+class SearchForm(TornadoForm):
     search = StringField(validators=[DataRequired('Search field is required')])
 
 

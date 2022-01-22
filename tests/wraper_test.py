@@ -25,8 +25,8 @@ except ImportError:
     from wtforms.validators import Required as DataRequired
 from tornado.httputil import HTTPServerRequest
 
-from wtforms_tornado.form import TornadoInputWrapper
-from wtforms_tornado import Form
+from tornado_wtforms.form import TornadoInputWrapper
+from tornado_wtforms import TornadoForm
 
 
 class SneakyField(Field):

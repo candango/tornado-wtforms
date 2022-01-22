@@ -15,4 +15,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+import warnings
+
+warnings.warn("Importing from wtforms_tornado is depreciated, please utilize "
+              "tornado_wtforms.", DeprecationWarning, stacklevel=2)
+
 from tornado_wtforms.form import *

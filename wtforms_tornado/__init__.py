@@ -15,6 +15,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+import warnings
 
 version_tuple = (0, 0, 2)
 
@@ -33,5 +34,7 @@ __author__ = 'Jorge Puente Sarrín <puentesarrin@gmail.com>'
 __since__ = '2013-09-25'
 __version__ = version
 
+warnings.warn("Importing from wtforms_tornado is depreciated, please utilize "
+              "tornado_wtforms.", DeprecationWarning, stacklevel=2)
 
 from tornado_wtforms.form import Form

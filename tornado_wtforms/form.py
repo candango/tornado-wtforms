@@ -18,6 +18,7 @@
 from .meta import TornadoMeta
 from tornado import escape
 from wtforms import form
+import warnings
 
 __all__ = (
     'TornadoInputWrapper',
@@ -80,5 +81,9 @@ class Form(TornadoForm):
 
     def __init__(self, formdata=None, obj=None, prefix="", data=None,
                  meta=None, **kwargs):
+        warnings.warn(
+            "The tornado_wtforms.Form class is depreciated, please utilize "
+            "tornado_wtforms.TornadoForm.",
+            DeprecationWarning, stacklevel=3)
         super(Form, self).__init__(formdata=formdata, obj=obj, prefix=prefix,
                                    data=data, meta=meta, **kwargs)

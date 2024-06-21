@@ -1,2 +1,2 @@
-firenado==0.9.5
+tornado
 wtforms==2.3.3

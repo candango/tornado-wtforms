@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 #
-# Copyright 2024 Flavio Garcia
+# Copyright 2022-2024 Flavio Garcia
 # Copyright 2013-2022 Jorge Puente Sarrín
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -69,6 +69,9 @@ setup(
         "Programming Language :: Python :: 3",
         "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",
+        "Programming Language :: Python :: 3.10",
+        "Programming Language :: Python :: 3.11",
+        "Programming Language :: Python :: 3.12",
         "Programming Language :: Python :: 3 :: Only",
         "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
         "Topic :: Software Development :: Libraries",

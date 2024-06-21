@@ -59,7 +59,7 @@ setup(
     author=tornado_wtforms.get_author(),
     author_email=tornado_wtforms.get_author_email(),
     install_requires=resolve_requires("requirements/basic.txt"),
-    python_requires=">= 3.8",
+    python_requires=">= 3.7",
     classifiers=[
         "Development Status :: 4 - Beta",
         "Environment :: Console",
@@ -67,6 +67,7 @@ setup(
         "Intended Audience :: Developers",
         "Intended Audience :: System Administrators",
         "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",
         "Programming Language :: Python :: 3.10",

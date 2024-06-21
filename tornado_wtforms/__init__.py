@@ -1,6 +1,4 @@
-# -*- coding: UTF-8 -*-
-#
-# Copyright 2022 Flávio Gonçalves Garcia
+# Copyright 2024 Flavio Garcia
 # Copyright 2013-2014 Jorge Puente Sarrín
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-__author__ = "Flávio Gonçalves Garcia <piraz@candango.org>"
+__author__ = "Flavio Garcia <piraz at candango.org>"
 __version__ = (0, 0, 1)
 __licence__ = "Apache License V2.0"
 

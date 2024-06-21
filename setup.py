@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 #
-# Copyright 2022 Flávio Gonçalves Garcia
+# Copyright 2024 Flavio Garcia
 # Copyright 2013-2022 Jorge Puente Sarrín
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -59,6 +59,7 @@ setup(
     author=tornado_wtforms.get_author(),
     author_email=tornado_wtforms.get_author_email(),
     install_requires=resolve_requires("requirements/basic.txt"),
+    python_requires=">= 3.8",
     classifiers=[
         "Development Status :: 4 - Beta",
         "Environment :: Console",
@@ -66,8 +67,6 @@ setup(
         "Intended Audience :: Developers",
         "Intended Audience :: System Administrators",
         "Programming Language :: Python :: 3",
-        "Programming Language :: Python :: 3.6",
-        "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",
         "Programming Language :: Python :: 3 :: Only",

@@ -1,7 +1,6 @@
 #!/usr/bin/env python
-# -*- coding: UTF-8 -*-
 #
-# Copyright 2022 Flávio Gonçalves Garcia
+# Copyright 2022-2024 Flavio Garcia
 # Copyright 2013-2022 Jorge Puente Sarrín
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -33,4 +32,3 @@ if __name__ == "__main__":
     result = runner.run(suite())
     if not result.wasSuccessful():
         exit(2)
-
